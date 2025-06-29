@@ -177,11 +177,9 @@ format:
 
 ## Author
 
-[Antonio Carlos Ribeiro](http://twitter.com/iantonioribeiro)
+[Abdul Mueed]
 
-## License
 
-This package is licensed under the MIT License - see the `LICENSE` file for details
 
 ## Contributing
 
