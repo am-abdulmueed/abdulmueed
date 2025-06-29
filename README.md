@@ -1,4 +1,4 @@
-# YAML
+
 ### A Laravel YAML parser and config loader
 
 <p align="center">
