@@ -41,7 +41,7 @@ I'm currently focused on being a Full Stack Developer. But as a games lover, in 
   <a href="https://betaae.framer.ai/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-9300FF?style=for-the-badge" alt="Portfolio" target="_blank" /></a>
 </div>
 
-## GitHub Stats
+
 
 
 
