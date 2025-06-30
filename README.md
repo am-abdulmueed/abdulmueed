@@ -177,7 +177,7 @@ format:
 
 ## Author
 
-[Abdul Mueed]
+**Abdul Mueed**
 
 
 
