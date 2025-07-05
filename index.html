@@ -6,39 +6,47 @@
   <title>Abdul Mueed</title>
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- ✅ Meta for Link Preview -->
-  <meta name="title" content="Abdul Mueed - Full Stack Developer" />
-  <meta name="description" content="I'm Abdul Mueed, a full-stack web & app developer from Pakistan. Explore my projects or hire me!" />
+<!-- ✅ Meta Preview for Social Sharing (Updated with og.png) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://am-abdulmueed.vercel.app/" />
+<meta property="og:title" content="Abdul Mueed – Full-Stack Developer" />
+<meta property="og:description" content="Explore my work: scalable web & app development, modern UIs, and open-source tools." />
+<meta property="og:image" content="https://am-abdulmueed.vercel.app/og.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
-  <!-- ✅ Open Graph (WhatsApp / Facebook) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://am-abdulmueed.vercel.app/" />
-  <meta property="og:title" content="Abdul Mueed - Full Stack Developer" />
-  <meta property="og:description" content="I'm Abdul Mueed, a full-stack web & app developer from Pakistan. Explore my projects or hire me!" />
-  <meta property="og:image" content="https://am-abdulmueed.vercel.app/og-banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Abdul Mueed – Full-Stack Developer" />
+<meta name="twitter:description" content="Explore my work: scalable web & app development, modern UIs, and open-source tools." />
+<meta name="twitter:image" content="https://am-abdulmueed.vercel.app/og.png" />
 
-  <!-- ✅ Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://am-abdulmueed.vercel.app/" />
-  <meta name="twitter:title" content="Abdul Mueed - Full Stack Developer" />
-  <meta name="twitter:description" content="I'm Abdul Mueed, a full-stack web & app developer from Pakistan. Explore my projects or hire me!" />
-  <meta name="twitter:image" content="https://am-abdulmueed.vercel.app/og-banner.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
 
-  <!-- Theme Toggle Script -->
+  <!-- ✅ Theme Toggle Script -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    });
+    function updateThemeButtonText(theme) {
+      const toggleBtn = document.querySelector('.theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      }
+    }
+
     function toggleTheme() {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      updateThemeButtonText(next);
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeButtonText(savedTheme);
+    });
   </script>
 
   <!-- Styles -->
@@ -84,6 +92,7 @@
       font-size: 14px;
       border: 1px solid #ccc;
       background-color: transparent;
+      color: inherit;
       transition: all var(--transition);
     }
 
@@ -155,6 +164,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
@@ -165,7 +175,7 @@
         </div>
         <a class="button" href="https://wa.me/923088200384">Hire Me</a>
       </div>
-      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle</button>
     </div>
 
     <div class="section">
