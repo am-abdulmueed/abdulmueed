@@ -40,7 +40,30 @@
   <meta name="theme-color" content="#000000" />
 
   <!-- ✅ Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
+  <!-- ✅ JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Mueed",
+    "url": "https://am-abdulmueed.vercel.app/",
+    "sameAs": [
+      "https://github.com/am-abdulmueed",
+      "https://instagram.com/am_abdulmueed",
+      "https://wa.me/923088200384"
+    ],
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "image": "https://am-abdulmueed.vercel.app/og.png"
+  }
+  </script>
 
   <!-- ✅ Theme Toggle Script -->
   <script>
@@ -59,10 +82,10 @@
       updateThemeButtonText(next);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeButtonText(savedTheme);
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeButtonText(saved);
     });
   </script>
 
@@ -191,7 +214,7 @@
         </div>
         <a class="button" href="https://wa.me/923088200384">Hire Me</a>
       </div>
-<button class="theme-toggle" onclick="toggleTheme()">Light</button>
+      <button class="theme-toggle" onclick="toggleTheme()">Light</button>
     </div>
 
     <div class="section">
@@ -205,21 +228,21 @@
     <div class="section">
       <h2 class="title">Projects</h2>
       <div class="card"><strong>AiBase</strong><br><a href="https://am-aibase.vercel.app/">A hub of AI tools using JSON storage.</a></div>
-      <div class="card"><strong>Lyricaa</strong><br><a href="https://lyricaa.vercel.app/"> Music discovery and streaming platform.</a></div>
-      <div class="card"><strong>Codebin</strong><br><a href="https://am-codebin.vercel.app/"> Share code snippets with output.</a></div>
-      <div class="card"><strong>Drawit</strong><br><a href="https://drawir.vercel.app/"> Online drawing/presentation tool.</a></div>
-      <div class="card"><strong>Mysocials</strong><br><a href="https://msocials.vercel.app/"> Social link-sharing app.</a></div>
-      <div class="card"><strong>URL Shortner</strong><br><a href="https://url-shs.vercel.app/"> Trackable short links with dashboard.</a></div>
-      <div class="card"><strong>IDE</strong><br><a href="https://ide-alpha.vercel.app/"> Online live HTML/CSS/JS editor.</a></div>
+      <div class="card"><strong>Lyricaa</strong><br><a href="https://lyricaa.vercel.app/">Music discovery and streaming platform.</a></div>
+      <div class="card"><strong>Codebin</strong><br><a href="https://am-codebin.vercel.app/">Share code snippets with output.</a></div>
+      <div class="card"><strong>Drawit</strong><br><a href="https://drawir.vercel.app/">Online drawing/presentation tool.</a></div>
+      <div class="card"><strong>Mysocials</strong><br><a href="https://msocials.vercel.app/">Social link-sharing app.</a></div>
+      <div class="card"><strong>URL Shortner</strong><br><a href="https://url-shs.vercel.app/">Trackable short links with dashboard.</a></div>
+      <div class="card"><strong>IDE</strong><br><a href="https://ide-alpha.vercel.app/">Online live HTML/CSS/JS editor.</a></div>
       <div class="card"><strong>Aurio</strong><br><a href="https://github.com/BetaAE/aurioapp/releases/">Modern ad-free music app.</a></div>
-      <div class="card"><strong>Cloud UP</strong><br><a href="https://github.com/BetaAE/aurioapp/releases/"> Free no-login streaming app.</a></div>
+      <div class="card"><strong>Cloud UP</strong><br><a href="https://github.com/BetaAE/aurioapp/releases/">Free no-login streaming app.</a></div>
     </div>
 
     <div class="section">
       <h2 class="title">Work Experience</h2>
-      <div class="card"><strong>Portals</strong> (04/03/25 - 03/06/25)<br> Frontend Developer - Responsive UI building and collaboration.</div>
-      <div class="card"><strong>Agricart</strong> (2024-2025)<br> Fullstack Dev - Built scalable solutions across front and back end.</div>
-      <div class="card"><strong>Freelancer</strong><br> Open for projects - worked on diverse client apps.</div>
+      <div class="card"><strong>Portals</strong> (04/03/25 - 03/06/25)<br>Frontend Developer - Responsive UI building and collaboration.</div>
+      <div class="card"><strong>Agricart</strong> (2024-2025)<br>Fullstack Dev - Built scalable solutions across front and back end.</div>
+      <div class="card"><strong>Freelancer</strong><br>Open for projects - worked on diverse client apps.</div>
     </div>
 
     <div class="section">
@@ -227,15 +250,8 @@
       <div class="social-links">
         <a href="https://github.com/am-abdulmueed">GitHub</a>
         <a href="https://wa.me/923088200384">WhatsApp</a>
-   <a href="https://instagram.com/am_abdulmueed">Instagram</a>
-   <a href="mailto:am.abdulmueed3@gmail.com?subject=Freelance%20Project%20Inquiry&body=Hi%20Abdul%2C%0AI%20saw%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you.%0A%0AThanks%2C%0A%5BYour%20Name%5D">Email Me</a>
-
-
-
-
-
-
-
+        <a href="https://instagram.com/am_abdulmueed">Instagram</a>
+        <a href="mailto:am.abdulmueed3@gmail.com?subject=Freelance%20Project%20Inquiry&body=Hi%20Abdul%2C%0AI%20saw%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you.%0A%0AThanks%2C%0A%5BYour%20Name%5D">Email Me</a>
       </div>
     </div>
   </div>
