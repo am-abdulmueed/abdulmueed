@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Primary SEO -->
+  <title>Abdul Mueed | Full-Stack Web Developer & Dev</title>
+  <meta name="description" content="Abdul Mueed is a full-stack developer and freelancer. Explore web & app projects, modern UIs, tools, and more. Available for remote development." />
+  <meta name="keywords" content="Abdul Mueed, full-stack developer, abdulmueed dev, betaae, betapix, abdulmueed developer, lyricaa music, lyricaa, cloudup stream, cloudup, aurio app, aurio music, aurio, freelance developer, portfolio, react developer, nextjs developer, modern developer, firebase developer" />
+  <meta name="author" content="Abdul Mueed" />
+  <link rel="canonical" href="https://am-abdulmueed.vercel.app/" />
+
+  <!-- ✅ Google Search Console Verification -->
+  <meta name="google-site-verification" content="t4IJjdrxRNZqEvg8gEUObftSM_xXIe6Fv-DbB4r5cB8" />
+
+  <!-- ✅ Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://am-abdulmueed.vercel.app/" />
+  <meta property="og:title" content="Abdul Mueed – Full-Stack Developer & Freelancer" />
+  <meta property="og:description" content="Explore web & mobile app projects by Abdul Mueed — a full-stack freelance developer." />
+  <meta property="og:image" content="https://am-abdulmueed.vercel.app/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Abdul Mueed Portfolio" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@abdulmueed" />
+  <meta name="twitter:creator" content="@abdulmueed" />
+  <meta name="twitter:title" content="Abdul Mueed – Full-Stack Developer & Freelancer" />
+  <meta name="twitter:description" content="Explore Abdul Mueed's work in web/app development. Available for freelance projects." />
+  <meta name="twitter:image" content="https://am-abdulmueed.vercel.app/og.png" />
+
+  
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <meta name="apple-mobile-web-app-title" content="Abdul Mueed Portfolio" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- ✅ Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- ✅ JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Mueed",
+    "url": "https://am-abdulmueed.vercel.app/",
+    "sameAs": [
+      "https://github.com/am-abdulmueed",
+      "https://instagram.com/a.b.d.u.l.m.u.e.e.d",
+      "https://wa.me/923088200384"
+    ],
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "image": "https://am-abdulmueed.vercel.app/og.png"
+  }
+  </script>
+
+  <!-- ✅ Theme Toggle Script -->
+  <script>
+    function updateThemeButtonText(theme) {
+      const toggleBtn = document.querySelector('.theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeButtonText(next);
+      setTimeout(updateCalButtonTheme, 100); // update Cal button after theme change
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeButtonText(saved);
+      setTimeout(updateCalButtonTheme, 500); // update Cal button on load
+    });
+
+    function updateCalButtonTheme() {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const calBtn = document.querySelector('.cal-floating-popup-button');
+      if (calBtn) {
+        if (theme === 'dark') {
+          calBtn.style.background = '#fff';
+          calBtn.style.color = '#000';
+          calBtn.style.border = 'none';
+          const svg = calBtn.querySelector('svg');
+          if (svg) { svg.style.color = '#000'; svg.style.fill = '#000'; }
+        } else {
+          calBtn.style.background = '#000';
+          calBtn.style.color = '#fff';
+          calBtn.style.border = 'none';
+          const svg = calBtn.querySelector('svg');
+          if (svg) { svg.style.color = '#fff'; svg.style.fill = '#fff'; }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Move Cal.com floating button up when footer is visible
+    function adjustCalButtonForFooter() {
+      const calBtn = document.querySelector('.cal-floating-popup-button');
+      const footer = document.querySelector('footer');
+      if (!calBtn || !footer) return;
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (footerRect.top < windowHeight) {
+        // Footer is visible, move button up
+        calBtn.style.bottom = (windowHeight - footerRect.top + 24) + 'px';
+      } else {
+        // Footer not visible, reset button position
+        calBtn.style.bottom = '64px';
+      }
+    }
+    window.addEventListener('scroll', adjustCalButtonForFooter);
+    window.addEventListener('resize', adjustCalButtonForFooter);
+    setInterval(adjustCalButtonForFooter, 500); // in case Cal button loads late
+    document.addEventListener('DOMContentLoaded', () => setTimeout(adjustCalButtonForFooter, 1000));
+  </script>
+
+  <!-- ✅ Styles -->
+  <style>
+    :root {
+      --bg-dark: #000;
+      --text-dark: #fff;
+      --bg-light: #f9f9f9;
+      --text-light: #111;
+      --accent: #6366f1;
+      --transition: 0.3s ease;
+      --font-sans: "Geist", sans-serif;
+      --font-alt: "Bricolage Grotesque", sans-serif;
+    }
+
+    html[data-theme="dark"] {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    html[data-theme="light"] {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      transition: background-color var(--transition), color var(--transition);
+      /* background handled by theme in html[data-theme] */
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline dotted;
+      transition: color var(--transition);
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      background-color: transparent;
+      color: inherit;
+      transition: all var(--transition);
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .container {
+      max-width: 600px;
+      width: 95vw;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .header, .section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .title {
+      font-family: var(--font-alt);
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-weight: 300;
+      color: gray;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 1.2rem 1rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(99,102,241,0.12);
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .social-links a {
+      margin-right: 1rem;
+    }
+
+    .button {
+      background: #fff;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+      transition: background 0.3s, transform 0.2s, color 0.3s;
+    }
+    .button:hover {
+      background: linear-gradient(90deg, #818cf8 60%, #6366f1 100%);
+      color: #fff;
+      transform: scale(1.04);
+    }
+    html[data-theme="light"] .button {
+      background: #000;
+      color: #fff;
+    }
+    html[data-theme="light"] .button:hover {
+      background: linear-gradient(90deg, #6366f1 60%, #a5b4fc 100%);
+      color: #fff;
+    }
+  </style>
+  <style>
+    /* Cal.com floating button theme fix */
+    html[data-theme="dark"] .cal-floating-popup-button {
+      background: #fff !important;
+      color: #000 !important;
+      border: none !important;
+    }
+    html[data-theme="dark"] .cal-floating-popup-button svg {
+      color: #000 !important;
+      fill: #000 !important;
+    }
+    html[data-theme="light"] .cal-floating-popup-button {
+      background: #000 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+    html[data-theme="light"] .cal-floating-popup-button svg {
+      color: #fff !important;
+      fill: #fff !important;
+    }
+  </style>
+  <style>
+    /* Splash screen styles */
+    #splash-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg-dark, #000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.7s;
+    }
+    #splash-screen img {
+      max-width: 60vw;
+      max-height: 60vh;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+    #splash-screen.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="splash-screen"><img src="AM-1--unscreen.gif" alt="Splash" /></div>
+  <div class="container">
+    <div class="header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>          
+          <h1 class="title" style="font-family: 'Scheherazade New', serif;">عبد المعيد</h1>
+          <span class="subtitle">Full-Stack Developer</span>
+        </div>
+        <a class="button" href="https://cal.com/am-abdulmueed.vercel.app/30min">Book my cal</a>
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+    </div>
+
+    <div class="section">
+      <h2 class="title">Who am I?</h2>
+      <p>I’m an 18-year-old Web & App Developer and freelancer from Pakistan. Currently exploring <span style="text-decoration: underline dotted;">Rust & Go</span>.</p>
+
+      <h2 class="title">What do I do?</h2>
+      <p>I build scalable full-stack apps, design front-ends, and architect efficient back-ends. Also available for freelance projects.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="title">Projects</h2>
+      <div class="card"><strong>AiBase</strong><br><a href="https://am-aibase.vercel.app/">A hub of AI tools using JSON storage.</a></div>
+      <div class="card"><strong>Lyricaa</strong><br><a href="https://lyricaa.vercel.app/">Music discovery and streaming platform.</a></div>
+      <div class="card"><strong>Codebin</strong><br><a href="https://am-codebin.vercel.app/">Share code snippets with output.</a></div>
+      <div class="card"><strong>Drawit</strong><br><a href="https://drawir.vercel.app/">Online drawing/presentation tool.</a></div>
+      <div class="card"><strong>Mysocials</strong><br><a href="https://msocials.vercel.app/">Social link-sharing app.</a></div>
+      <div class="card"><strong>URL Shortner</strong><br><a href="https://url-shs.vercel.app/">Trackable short links with dashboard.</a></div>
+      <div class="card"><strong>IDE</strong><br><a href="https://ide-alpha.vercel.app/">Online live HTML/CSS/JS editor.</a></div>
+      <div class="card"><strong>Aurio</strong><br><a href="https://github.com/BetaAE/aurioapp/releases/">Modern ad-free music app.</a></div>
+      <div class="card"><strong>Cloud UP</strong><br><a href="https://github.com/BetaAE/cloudup/releases/">Free no-login streaming app.</a></div>
+    </div>
+
+    <div class="section">
+      <h2 class="title">Work Experience</h2>
+
+  <div class="card">
+    <strong>📱 Portals (04 Mar 2025 – 03 Jun 2025)</strong><br>
+    <b>Frontend Developer</b>
+    <ul>
+      <li>Built responsive user interfaces using modern frontend technologies.</li>
+      <li>Collaborated closely with designers and backend teams for seamless integration.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>💼 Freelancer</strong><br>
+    <b>Full-Stack Developer</b>
+    <ul>
+      <li>Open for projects.</li>
+      <li>Worked on diverse client applications across web, mobile, and hybrid platforms.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>🎨 Graphics Designer</strong>
+    <ul>
+      <li>Specialized in UI/UX graphics using <b>SVG, CSS, and XML</b>.</li>
+      <li>Designed custom elements for web, apps, and games.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>📲 App & Game Developer</strong>
+    <ul>
+      <li>Developed cross-platform apps and games using <b>Flutter, Kotlin, Java, Swift, Rust, Go, JavaScript, C++, C#, Python</b>.</li>
+      <li>Used modern game engines like <b>Unity</b> and <b>Godot</b>.</li>
+      <li>Integrated REST APIs, Firebase, and real-time features.</li>
+      <li>Focused on clean UI/UX, state management, and offline-first performance.</li>
+      <li>Strong version control and collaboration skills using <b>Git</b>.</li>
+    </ul>
+    <details>
+      <summary><b>🧠 Languages & Technologies Used</b></summary>
+      <table>
+        <tr><td><b>Mobile & Cross-Platform</b></td><td>Flutter, Kotlin, Java, Swift</td></tr>
+        <tr><td><b>Frontend (Web)</b></td><td>HTML5, CSS3, JavaScript, TypeScript, React</td></tr>
+        <tr><td><b>Backend</b></td><td>Node.js, Express, Go, Rust, Python, Firebase, Supabase</td></tr>
+        <tr><td><b>Game Dev</b></td><td>Unity (C#), Godot, C++</td></tr>
+        <tr><td><b>Scripting & Automation</b></td><td>Python, Bash</td></tr>
+        <tr><td><b>Design & Markup</b></td><td>XML, SVG, Figma, Canva</td></tr>
+        <tr><td><b>Version Control</b></td><td>Git, GitHub, GitLab</td></tr>
+        <tr><td><b>Databases</b></td><td>Firebase Firestore, MongoDB, MySQL, SQLite</td></tr>
+      </table>
+    </details>
+  </div>
+    </div>
+
+    <div class="section">
+      <h2 class="title">🧰 Tech Stack</h2>
+      <ul>
+        <li><b>Languages:</b> Dart, Java, JavaScript, TypeScript, Rust, Go, C++, C#, Python</li>
+        <li><b>Frameworks:</b> Flutter, React, Node.js, Express, Unity, Godot</li>
+        <li><b>Tools:</b> Git, Firebase, Supabase, Figma, Postman</li>
+        <li><b>Design:</b> XML, SVG, CSS, Canva, Adobe XD</li>
+        <li><b>Databases:</b> Firestore, MongoDB, MySQL, SQLite</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="title">Connect</h2>
+      <div class="social-links">
+        <a href="https://github.com/am-abdulmueed">GitHub</a>
+        <a href="https://wa.me/923088200384">WhatsApp</a>
+        <a href="https://instagram.com/a.b.d.u.l.m.u.e.e.d">Instagram</a>
+        <a href="mailto:am.abdulmueed3@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Abdul%2C%0A%0AMy%20name%20is%20%5BYour%20Name%5D.%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you%20regarding...">Email Me</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  // Hide splash screen after 1.5 seconds
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.getElementById('splash-screen').classList.add('hide');
+    }, 1500);
+  });
+</script>
