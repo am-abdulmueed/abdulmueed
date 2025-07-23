@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://am-abdulmueed.vercel.app/sitemap.xml
